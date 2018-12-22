@@ -6,6 +6,7 @@
 $ git clone https://github.com/haolic/capsule-select.git
 $ cd capsule-select
 $ npm i
+# 或cnpm
 $ npm start
 ```
 
