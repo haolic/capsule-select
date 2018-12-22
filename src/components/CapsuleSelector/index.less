@@ -1,10 +1,7 @@
-.content {
-    text-align: left;
-    padding: 15px;
-    border: 1px solid #ccc;
-    margin: 15px;
-    border-radius: 4px;
-    height: 300px;
+.selectorwrap {
+    position: relative;
+    padding: 5px;
+    margin: 5px 0;
 }
 
 .selectinput {
@@ -12,10 +9,7 @@
     outline: none;
     cursor: pointer;
     height: 24px;
-}
-
-.selectorwrap {
-    position: relative;
+    width: 90px;
 }
 
 :global {
@@ -26,10 +20,9 @@
         font-family: '黑体';
         position: absolute;
         left: 0;
-        border: 1px solid #ccc;
         border-radius: 4px;
-        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.26);
         color: #333;
+        transition: height .1s;
         li {
             white-space: nowrap;
             transition: all 0.3s;
@@ -39,7 +32,7 @@
             cursor: pointer;
             border-radius: 4px;
             &:hover {
-                background: #a0c6ff;
+                background: #c0e2ff;
             }
         }
     }
@@ -57,7 +50,7 @@
         font-size: 14px;
         padding: 0 20px 0 8px;
         border-radius: 4px;
-        background: #66ccff;
+        background: #c0e2ff;
         font-family: '黑体';
         position: relative;
         .deleteicon {
@@ -72,5 +65,29 @@
         &+.capsuleWrap {
             margin-left: 5px;
         }
+    }
+    .capsuleDown {
+        position: absolute;
+        left: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .capsuletable {
+        .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td {
+            padding: 5px 0;
+            white-space: nowrap;
+        }
+    }
+    .ant-table-tbody > tr > td.ant-table-selection-column {
+        min-width: 30px;
+        width: 30px;
+    }
+    .ant-table-small {
+        min-width: 160px;
+        border: none;
+    }
+    .ant-table-small > .ant-table-content > .ant-table-body {
+        margin: 0;
+        background: #fff;
     }
 }

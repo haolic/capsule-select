@@ -3,13 +3,7 @@ import { connect } from 'dva';
 import CapsuleSelector from './../components/CapsuleSelector';
 
 const homePage = props => {
-  const { dispatch, capsuleList, isShowList, selectedCapsule } = props;
-  const inputClick = () => {
-    dispatch({
-      type: 'capsuleSelector/changeListShow',
-      payload: true,
-    });
-  };
+  const { dispatch, capsuleList, selectedCapsule } = props;
   const itemClick = item => {
     dispatch({
       type: 'capsuleSelector/itemClick',
@@ -22,15 +16,18 @@ const homePage = props => {
       payload: capsule,
     });
   };
+  const dropDownSelect = (keys, items) => {
+    console.log(keys)
+    console.log(items)
+  }
   return (
     <div className={styles.container}>
       <CapsuleSelector
         capsuleList={capsuleList}
-        isShowList={isShowList}
         selectedCapsule={selectedCapsule}
-        inputClick={inputClick}
         itemClick={itemClick}
         deleteClick={deleteClick}
+        dropDownSelect={dropDownSelect}
       />
     </div>
   );
