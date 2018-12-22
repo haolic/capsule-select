@@ -1,0 +1,76 @@
+.content {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin: 15px;
+    border-radius: 4px;
+    height: 300px;
+}
+
+.selectinput {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 24px;
+}
+
+.selectorwrap {
+    position: relative;
+}
+
+:global {
+    .list {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        font-family: '黑体';
+        position: absolute;
+        left: 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.26);
+        color: #333;
+        li {
+            white-space: nowrap;
+            transition: all 0.3s;
+            height: 32px;
+            line-height: 32px;
+            padding: 0 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            &:hover {
+                background: #a0c6ff;
+            }
+        }
+    }
+    .inputwrap {
+        position: relative;
+        display: inline-block;
+        margin-left: 5px;
+        line-height: 24px;
+        vertical-align: middle;
+    }
+    .capsuleWrap {
+        display: inline-block;
+        height: 27px;
+        line-height: 27px;
+        font-size: 14px;
+        padding: 0 20px 0 8px;
+        border-radius: 4px;
+        background: #66ccff;
+        font-family: '黑体';
+        position: relative;
+        .deleteicon {
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            opacity: 0;
+        }
+        &:hover .deleteicon {
+            opacity: 1;
+        }
+        &+.capsuleWrap {
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+ul, li {
+  list-style: none;
+}
+* {
+  transition: all .3s;
+}
