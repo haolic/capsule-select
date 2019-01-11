@@ -17,18 +17,20 @@ const homePage = props => {
     });
   };
   const dropDownSelect = (keys, items) => {
-    console.log(keys)
-    console.log(items)
-  }
+    console.log(keys);
+    console.log(items);
+  };
   return (
     <div className={styles.container}>
-      <CapsuleSelector
-        capsuleList={capsuleList}
-        selectedCapsule={selectedCapsule}
-        itemClick={itemClick}
-        deleteClick={deleteClick}
-        dropDownSelect={dropDownSelect}
-      />
+      <div>
+        <CapsuleSelector
+          capsuleList={capsuleList}
+          selectedCapsule={selectedCapsule}
+          itemClick={itemClick}
+          deleteClick={deleteClick}
+          dropDownSelect={dropDownSelect}
+        />
+      </div>
     </div>
   );
 };
