@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import AceEditor from 'react-ace';
 import 'brace';
 import 'brace/mode/javascript';
@@ -7,37 +7,70 @@ import './ace.less';
 
 class Ace extends React.Component {
   tid;
+  inputFunction = function() {};
   state = {
-    aceValue: 'const a = 1;',
+    inputData: '',
+    aceValue: `
+      console.log(data);
+      return data;
+    `,
+    outputData: '',
   };
-  onChange = newValue => {
-    // console.log('change', newValue);
+  componentDidMount() {
+    this.do(this.state.aceValue);
+  }
+  dataChange = dataValue => {
+    // dataValue;
+  };
+  do = functionData => {
     this.setState({
-      aceValue: newValue,
+      aceValue: functionData,
     });
     if (this.tid) {
       clearTimeout(this.tid);
     }
     this.tid = setTimeout(() => {
       try {
-        new Function(newValue)();
+        this.inputFunction = new Function(this.state.inputData, functionData);
+        console.log(this.inputFunction);
       } catch (e) {
         console.error(e);
       }
     }, 1000);
   };
   render() {
+    const commonProps = {
+      mode: 'javascript',
+      theme: 'monokai',
+      fontSize: 14,
+    };
     return (
       <div className="ace-editor-wrap">
         <div className="outter">
-          <AceEditor
-            value={this.state.aceValue}
-            mode="javascript"
-            theme="monokai"
-            onChange={this.onChange}
-            name="UNIQUE_ID_OF_DIV"
-            editorProps={{ $blockScrolling: true }}
-          />
+          <div>
+            <AceEditor
+              value={this.state.inputData}
+              {...commonProps}
+              onChange={this.dataChange}
+              name="aceInput"
+            />
+          </div>
+          <div>
+            <AceEditor
+              value={this.state.aceValue}
+              {...commonProps}
+              onChange={this.onChange}
+              name="aceFunc"
+            />
+          </div>
+          <div>
+            <AceEditor
+              value={this.state.outputData}
+              {...commonProps}
+              name="aceOutput"
+              readOnly={true}
+            />
+          </div>
         </div>
       </div>
     );
