@@ -31,7 +31,8 @@ class Ace extends React.Component {
     }
     this.tid = setTimeout(() => {
       try {
-        this.inputFunction = new Function(this.state.inputData, functionData);
+        const Fun = Function;
+        this.inputFunction = new Fun(this.state.inputData, functionData);
         console.log(this.inputFunction);
       } catch (e) {
         console.error(e);

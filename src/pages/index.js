@@ -1,6 +1,7 @@
 import styles from './index.less';
 import { connect } from 'dva';
 import CapsuleSelector from './../components/CapsuleSelector';
+import { Popover } from 'antd';
 
 const homePage = props => {
   const { dispatch, capsuleList, selectedCapsule } = props;

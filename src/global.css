@@ -9,6 +9,6 @@ body {
 ul, li {
   list-style: none;
 }
-* {
+/* * {
   transition: all .3s;
-}
+} */
