@@ -35,8 +35,8 @@ const homePage = props => {
       </div>
       <ul>
         {
-          arr.map(e => {
-            return <Fragment>
+          arr.map((e, i) => {
+            return <Fragment key={i}>
               <li>{e + '' + Math.random()}</li>
               <li>{e + '' + Math.random()}</li>
               <li>{e + '' + Math.random()}</li>
