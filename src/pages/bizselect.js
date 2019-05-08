@@ -5,7 +5,7 @@ class PageBizSelect extends React.Component {
   render() {
     return (
       <div>
-        <BizSelector label="名称haha, 小八的名称.小八是一只猫." />
+        <BizSelector label="名称小八" />
       </div>
     );
   }
