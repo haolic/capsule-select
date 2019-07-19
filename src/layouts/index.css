@@ -13,3 +13,9 @@
   color: white;
   margin: 0;
 }
+.navWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+}
