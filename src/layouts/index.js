@@ -19,6 +19,9 @@ function BasicLayout(props) {
         <Link to="/reactHooks">
           <Button>reactHooks</Button>
         </Link>
+        <Link to="/maptest">
+          <Button>maptest</Button>
+        </Link>
         <Link to="/">
           <Button type="primary">返回</Button>
         </Link>
