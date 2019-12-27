@@ -1,4 +1,53 @@
 .wrap {
   border: 1px solid #f90;
   height: 400px;
+  padding: 24px;
+}
+.mainWrap {
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  padding: 24px;
+  position: relative;
+  filter: contrast(10);
+  .one {
+    // border: 2px solid #f90;
+    background: darkslateblue;
+    position: absolute;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: framesOne 3s linear 0s infinite alternate;
+    filter: blur(5px);
+  }
+  .two {
+    border: 2px solid #f90;
+    background: darkslateblue;
+    position: absolute;
+    left: 85px;
+    top: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: framesTwo 2s linear 0s infinite alternate;
+    filter: blur(5px);
+  }
+}
+
+@keyframes framesOne {
+  to {
+    left: 70px;
+    width: 40px;
+    height: 60px;
+    border-radius: 5px;
+  }
+}
+@keyframes framesTwo {
+  to {
+    right: 460px;
+    width: 40px;
+    height: 60px;
+    border-radius: 5px;
+  }
 }
