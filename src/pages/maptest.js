@@ -1,9 +1,7 @@
 import React from 'react';
-import AceEditor from 'react-ace';
 import 'brace';
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
-import './ace.less';
 
 class Maptest extends React.Component {
   state = {

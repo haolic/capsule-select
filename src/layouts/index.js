@@ -10,6 +10,7 @@ const btnList = [
   { name: 'reactHooks', key: '/reactHooks' },
   { name: '遍历测试', key: '/maptest' },
   { name: 'css融合效果', key: '/CssFilter' },
+  { name: 'mobX测试', key: '/mobXTest' },
 ];
 function BasicLayout(props) {
   const [pageTitle, setPageTitle] = useState('胶囊选择器');
@@ -18,7 +19,7 @@ function BasicLayout(props) {
       <h1 className={styles.title}>{pageTitle}</h1>
       <div className={styles.navWrap}>
         {btnList.map(el => (
-          <Link to={el.key}>
+          <Link to={el.key} className={styles.btnWrap}>
             <Button
               onClick={() => {
                 setPageTitle(el.name);

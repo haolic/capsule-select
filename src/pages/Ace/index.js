@@ -3,7 +3,6 @@ import AceEditor from 'react-ace';
 import 'brace';
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
-import './ace.less';
 
 class Ace extends React.Component {
   tid;
