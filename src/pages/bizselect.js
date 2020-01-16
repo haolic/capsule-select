@@ -4,7 +4,6 @@ import { connect } from 'dva';
 @connect(({ bizSelect }) => bizSelect)
 class PageBizSelect extends React.Component {
   componentDidMount() {
-    console.log('PageBizSelect Mounted')
     this.props.dispatch({
       type: 'bizSelect/fetchData',
     });

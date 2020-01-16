@@ -3,6 +3,10 @@ import { Button } from 'antd';
 import Link from 'umi/link';
 import styles from './index.css';
 
+// const allPageMod = require.context('../pages', true, /index\.js$/);
+// const keys = allPageMod.keys();
+// const allPage = keys.map(el => allPageMod(el).default);
+
 const btnList = [
   { name: '胶囊选择器', key: '/' },
   { name: 'ace编辑器', key: '/ace' },
@@ -19,7 +23,7 @@ function BasicLayout(props) {
       <h1 className={styles.title}>{pageTitle}</h1>
       <div className={styles.navWrap}>
         {btnList.map(el => (
-          <Link to={el.key} className={styles.btnWrap}>
+          <Link key={el.key} to={el.key} className={styles.btnWrap}>
             <Button
               onClick={() => {
                 setPageTitle(el.name);
