@@ -15,10 +15,13 @@
 .navWrap {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   padding-top: 15px;
   flex-wrap: wrap;
+  margin-left: 15px;
 }
 .btnWrap {
   margin: 10px 5px;
+}
+.btn {
+  min-width: 90px;
 }
