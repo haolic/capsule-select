@@ -9,18 +9,18 @@ const ReactGridLayout = WidthProvider(RGL);
 export default class NoCompactingLayout extends React.PureComponent {
   static defaultProps = {
     className: 'layout',
-    items: 50,
-    cols: 12,
-    rowHeight: 30,
+    // items: 50,
+    cols: 1000,
+    rowHeight: 1,
     onLayoutChange: function() {},
     // This turns off compaction so you can place items wherever.
     verticalCompact: false,
+    margin: [0, 0],
   };
 
   constructor(props) {
     super(props);
-
-    const layout = [{ x: 0, y: 0, w: 12, h: 12, i: 'i' }];
+    const layout = [{ x: 200, y: 0, w: 600, h: 500, i: 'i' }];
     this.state = { layout };
   }
 

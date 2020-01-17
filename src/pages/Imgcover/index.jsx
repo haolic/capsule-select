@@ -1,10 +1,17 @@
 import React from 'react';
-import styles from 'index.less';
+import styles from './index.less';
 
 const Imgcover = () => {
-  return <div className={styles.imgWrap}>
-    
-  </div>
-}
+  return (
+    <div
+      style={{
+        height: '100%',
+      }}
+    >
+      <div className={styles.imgWrap}></div>
+      'background-size: contain'
+    </div>
+  );
+};
 
 export default Imgcover;
