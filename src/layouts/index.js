@@ -13,7 +13,10 @@ function BasicLayout(props) {
   const [pageTitle, setPageTitle] = useState('胶囊选择器');
   const [selectedBtn, setSelectedBtn] = useState('/');
   useEffect(() => {
-    setSelectedBtn(window.location.pathname);
+    const { pathname } = window.location;
+    const [current = {}] = btnList.filter(el => el.key === pathname);
+    setPageTitle(current.name)
+    setSelectedBtn(pathname);
   }, []);
   return (
     <div className={styles.normal}>
