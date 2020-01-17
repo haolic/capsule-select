@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
 import Link from 'umi/link';
 import btnList from './menuConfig';
@@ -12,6 +12,9 @@ import styles from './index.css';
 function BasicLayout(props) {
   const [pageTitle, setPageTitle] = useState('胶囊选择器');
   const [selectedBtn, setSelectedBtn] = useState('/');
+  useEffect(() => {
+    setSelectedBtn(window.location.pathname);
+  }, []);
   return (
     <div className={styles.normal}>
       <h1 className={styles.title}>{pageTitle}</h1>
@@ -30,7 +33,7 @@ function BasicLayout(props) {
         {btnList.map(el => (
           <Link key={el.key} to={el.key} className={styles.btnWrap}>
             <Button
-              type={el.key === selectedBtn && "primary"}
+              type={el.key === selectedBtn ? 'primary' : 'default'}
               ghost={el.key === selectedBtn}
               className={styles.btn}
               onClick={() => {
