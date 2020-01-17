@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from 'index.less';
 
 const Imgcover = () => {
-  return <div>
-    img
+  return <div className={styles.imgWrap}>
+    
   </div>
 }
 
