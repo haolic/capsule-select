@@ -32,7 +32,6 @@ class Ace extends React.Component {
       try {
         const Fun = Function;
         this.inputFunction = new Fun(this.state.inputData, functionData);
-        console.log(this.inputFunction);
       } catch (e) {
         console.error(e);
       }

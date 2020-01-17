@@ -2,11 +2,11 @@ import React from 'react';
 import AppState from './state';
 import { Button } from 'antd';
 import { observer } from 'mobx-react';
+import styles from './index.less';
 
 const TimerView = observer(({ appState }) => (
   <div
     style={{
-      width: 300,
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -14,7 +14,8 @@ const TimerView = observer(({ appState }) => (
     }}
   >
     <Button onClick={appState.reset}>点击重置</Button>
-    <span>{appState.timer}</span>
+    <span className={styles.timerStr}>{appState.timer.time}</span>
+    <span className={styles.timerStr}>{appState.timer.localTime}</span>
   </div>
 ));
 const MobXTest = () => {

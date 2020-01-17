@@ -2,6 +2,7 @@ import request from './../utils/request';
 
 export default {
   fetchData() {
-    return request('/api/bizSelectData');
+    const re = request('/api/bizSelectData');
+    return re;
   },
 };
