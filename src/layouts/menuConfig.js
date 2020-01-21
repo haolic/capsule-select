@@ -5,7 +5,8 @@ const btnList = [
   { name: '遍历测试', key: '/maptest' },
   { name: '融合效果', key: '/CssFilter' },
   { name: 'mobX', key: '/mobXTest' },
-  { name: '图片覆盖', key: '/Imgcover'}
+  { name: '图片覆盖', key: '/Imgcover'},
+  { name: 'useReducer', key: '/useReducer'}
 ];
 
 export default btnList;
