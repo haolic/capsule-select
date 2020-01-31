@@ -6,7 +6,8 @@ const btnList = [
   { name: '融合效果', key: '/CssFilter' },
   { name: 'mobX', key: '/mobXTest' },
   { name: '图片覆盖', key: '/Imgcover'},
-  { name: 'useReducer', key: '/useReducer'}
+  { name: 'useReducer', key: '/useReducer'},
+  { name: '新冠状病毒肺炎疫情感染统计', key: '/Coronavirus'}
 ];
 
 export default btnList;
