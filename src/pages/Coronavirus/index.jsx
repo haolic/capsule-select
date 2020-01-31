@@ -17,7 +17,7 @@ const Coronavirus = () => {
         type: 'category',
         formatter: t => {
           return t.substr(5);
-        }
+        },
       },
       label: {
         visible: true,
@@ -38,7 +38,15 @@ const Coronavirus = () => {
   useEffect(() => {
     fetch();
   }, []);
-  return <div ref={r => (chartDom.current = r)}></div>;
+  return (
+    <div
+      ref={r => (chartDom.current = r)}
+      style={{
+        height: '100%',
+        width: '100%',
+      }}
+    ></div>
+  );
 };
 
 export default Coronavirus;
