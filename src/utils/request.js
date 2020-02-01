@@ -12,6 +12,7 @@ export default function(url, option = {}) {
   return request(url, option)
     .then(res => {
       if (res.success) {
+        res.msg && message.success(res.msg);
         return res.result;
       } else {
         message.error(res.errMsg || '请求错误。');

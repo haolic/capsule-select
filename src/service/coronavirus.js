@@ -1,4 +1,5 @@
 import request from '@/utils/request';
+
 export const fetchVirusData = async () => {
   // const res = await request('https://www.easy-mock.com/mock/5e3103a2b6f7d03b38a940df/example/api/coronavirus');
   const data = (await request('/api/coronavirus')) || [];
@@ -34,4 +35,11 @@ export const fetchVirusData = async () => {
     }); // 治愈
   });
   return newData;
+};
+export const insertVirusData = async params => {
+  const data = await request('/api/insert_data', {
+    method: 'post',
+    data: params,
+  });
+  return data;
 };
