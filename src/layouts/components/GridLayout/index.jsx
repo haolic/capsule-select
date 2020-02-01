@@ -1,12 +1,13 @@
 import React from 'react';
 import RGL, { WidthProvider } from 'react-grid-layout';
+import { connect } from 'dva';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styles from './index.less';
 
 const ReactGridLayout = WidthProvider(RGL);
 
-export default class NoCompactingLayout extends React.PureComponent {
+class NoCompactingLayout extends React.PureComponent {
   static defaultProps = {
     className: 'layout',
     // items: 50,
@@ -20,7 +21,15 @@ export default class NoCompactingLayout extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    const layout = [{ x: 200, y: 0, w: 600, h: 500, i: 'i' }];
+    const layout = [
+      {
+        x: 200,
+        y: 0,
+        w: 600,
+        h: 500,
+        i: 'i',
+      },
+    ];
     this.state = { layout };
   }
 
@@ -30,6 +39,10 @@ export default class NoCompactingLayout extends React.PureComponent {
 
   render() {
     const { children } = this.props;
+    const { pathname } = window.location;
+    if (pathname === '/CoronavirusAdd') {
+      return <div>{children || <div>No Children</div>}</div>;
+    }
     return (
       <ReactGridLayout
         layout={this.state.layout}
@@ -43,3 +56,5 @@ export default class NoCompactingLayout extends React.PureComponent {
     );
   }
 }
+
+export default NoCompactingLayout;
