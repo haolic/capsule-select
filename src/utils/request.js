@@ -1,18 +1,20 @@
-import axios from 'axios';
+import { extend } from 'umi-request';
+import { message } from 'antd';
 
-export default function request(option) {
-  return axios(option)
+const baseUrl = 'http://localhost:7001';
+
+const request = extend({
+  prefix: baseUrl,
+  timeout: 1500,
+});
+
+export default function(url, option = {}) {
+  return request(url, option)
     .then(res => {
-      if (res.status !== 200) {
-        console.error(res.statusText);
-        return Promise.resolve({
-          ...res,
-        });
+      if (res.success) {
+        return res.result;
       } else {
-        return Promise.resolve({
-            data: res.data,
-            success: true
-        });
+        message.error(res.errMsg || '请求错误。');
       }
     })
     .catch(err => {
